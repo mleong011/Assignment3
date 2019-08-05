@@ -2,7 +2,7 @@
 
 # Everything needed in production
 # Flask
-Flask==0.12.2
+Flask
 
 # Deployment
 gunicorn==19.7.1
@@ -10,10 +10,3 @@ gunicorn==19.7.1
 # Test
 behave==1.2.5
 WebTest==2.0.29
-
-pytest
-flake8
-pandas
-flask
-pathlib
-nltk
