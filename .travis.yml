@@ -1,5 +1,9 @@
-dist: xenial   # required for Python >= 3.7
+dist: xenial
 language: python
 python:
-  - "3.7"
+- '3.7'
 script: python nasapod.py
+deploy:
+    provider: heroku
+    api_key: 0fcb64f6-8e0f-4533-a1fd-f6b316ccde88
+    app: nasapod.py
