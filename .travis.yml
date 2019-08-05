@@ -7,13 +7,13 @@ install:
 
   # install dependencies
 install:
-  - pip3 install codecov
-   - pip3 install Flask
+  -pip3 install codecov
+  -pip3 install Flask
 
 # run scripts
 script:
-  - coverage erase
-  - coverage run nasapod.py && coverage html
+  -coverage erase
+  -coverage run nasapod.py && coverage html
 
 after_success:
-  - codecov
+  -codecov
