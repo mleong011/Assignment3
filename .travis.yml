@@ -2,4 +2,8 @@ dist: xenial   # required for Python >= 3.7
 language: python
 python:
   - "3.7"
-script: python nasapod.py
+install:
+  -pip install -r requirements/dev.txt
+
+script:
+  -pylint --output-format=text nasapod.py
