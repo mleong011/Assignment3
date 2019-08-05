@@ -2,19 +2,4 @@ dist: xenial   # required for Python >= 3.7
 language: python
 python:
   - "3.7"
-install:
-  - pip install -r requirements/dev.txt
-
-
-  # install dependencies
-#install:
-  #-pip3 install codecov
-  # pip3 install Flask
-
-# run scripts
 script: python nasapod.py
-  #- coverage erase
-  #- coverage run nasapod.py && coverage html
-
-#after_success:
-#  - codecov
