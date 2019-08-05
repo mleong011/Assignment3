@@ -8,6 +8,7 @@ install:
   # install dependencies
 install:
   - pip3 install codecov
+   - pip3 install Flask
 
 # run scripts
 script:
