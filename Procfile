@@ -1,2 +1,2 @@
-vim Procfile
-web: gunicorn nasapod.py:app
+
+web: gunicorn nasapod:app

@@ -6,6 +6,8 @@ install:
   - pip install -r requirements/dev.txt
   - pip install codecov
 script:
+  - python -m unittest discover
+  - behave
   - coverage erase
   - coverage run nasapod.py && coverage html
   - pylint --output-format=text nasapod.py
