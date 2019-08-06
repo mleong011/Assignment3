@@ -2,9 +2,20 @@ dist: xenial
 language: python
 python:
 - '3.7'
-script: python nasapod.py
+install:
+  pip install -r requirements/dev.txt
+  pip install codecov
+script:
+  coverage erase
+  coverage run nasapod.py && coverage html
+  pylint --output-format=text nasapod.py
+after_success:
+  codecov
+
+
+    #python nasapod.py
 deploy:
   provider: heroku
   api_key:
     secure: d4MZp7uDqRNpOxe+U990UGb2qjA3L6JpnE4DMyiMA2ylHckciiGR2RkaJGZfljsp4HXD8RlruizUm3qFtsm3Nj0rYX5UccZCtkOfBvrnkE2ub5Z/+oXM4uBflWCrhG4jAyQ7DcNa58jv8zMbb3t9ywDAZYTLUHdTt0R7OcakI4eAwbkY/POa09chIaNqZ50cNcDJ1NiH3s8p6JrqVMybU2+d1HIlLerUjRaDDgRhyYscKogvRUNbxn/u1cfOyzWy9L+3fFfmVkCvjOaC2EZ8qzNhVAKyzdGL9eW4RLQxvPZX+KcwdsQy+Z77SZMUUaNUzxJvdd1pohaf/SmaH+V8k3TYmR+f5Ady//lOJc3gLZ4uaSuiXro3HjoCLlNbwhTR7uQAByQvUQ7xOY0SW8G7Eg/irWEoTFP/Rnj2lN2gVzdGprrN+efHF+2IWgIN9RAGzd8APw6/zIcXDSEMlYyZwCTBJiJj/L8/UE68bwqSiht+6xfcQXQAwzOtrquoOKS9PbXp4iXqZSEjL7DRAndw4BdXwv6WuoBbJGxGlT/zL+JjaNOHQrwxgQjTjAgk1HpDlgz1/6Lwd3DKe0kZYBQ98SP5ppq3KdF/qvsDE7TeAFHJeM5RciaSnCdl8+DSy/ReWNus8frtp2DOAcpxDCgT0HIzvEHVI6dM9tjnetq1GQw=
-  app: assign3-nasapod
+  app: flask-travis-ci
