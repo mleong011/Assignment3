@@ -9,10 +9,10 @@ script:
   - python -m unittest discover
   #- coverage erase
   #- coverage run nasapod.py && coverage html
-  - pylint --output-format=text nasapod.py
+  #- pylint --output-format=text nasapod.py
 
-after_success:
-  - codecov
+#after_success:
+#  - codecov
 
 
     #python nasapod.py
