@@ -5,7 +5,8 @@ import flask
 from flask import request, jsonify, Flask, render_template, redirect
 
 
-app = flask.Flask(__name__)
+#app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config["DEBUG"] = True
 
 #Define APOD urllib
@@ -33,3 +34,6 @@ def home():
 
 
     return render_template('index.html', info=info)
+
+if __name__ == '__main__':
+    app.run()
